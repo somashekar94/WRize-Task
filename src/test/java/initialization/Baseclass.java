@@ -27,8 +27,8 @@ import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URL;
-import org.openqa.selenium.remote.CapabilityType;
+//import java.net.URL;
+//import org.openqa.selenium.remote.CapabilityType;
 
 
 public class Baseclass {
