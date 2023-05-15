@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 
+
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
@@ -28,7 +29,6 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.remote.CapabilityType;
-import io.appium.java_client.MobileElement;
 
 
 public class Baseclass {
@@ -66,7 +66,7 @@ public class Baseclass {
 //        capabilities.setCapability("autoGrantPermissions", "true");
         capabilities.setCapability("autoAcceptAlerts", "true");
 //     capabilities.setCapability("appiumVersion","v1.22.3");
-        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities);  //4723
+//        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities);  //4723
         
 //        AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities); 
 
