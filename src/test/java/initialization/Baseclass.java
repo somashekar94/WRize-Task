@@ -65,7 +65,7 @@ public class Baseclass {
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,".activity.SplashActivity t651");
 //        capabilities.setCapability("autoGrantPermissions", "true");
         capabilities.setCapability("autoAcceptAlerts", "true");
-    capabilities.setCapability("appiumVersion","v1.22.3");
+//    capabilities.setCapability("appiumVersion","v1.22.3");
 //        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities);  //4723
         
 //        AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities); 
