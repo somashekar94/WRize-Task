@@ -63,7 +63,7 @@ public class Baseclass {
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "menloseweight.loseweightappformen.weightlossformen");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,".activity.SplashActivity t651");
-//        capabilities.setCapability("autoGrantPermissions", "true");
+        capabilities.setCapability("autoGrantPermissions", "true");
         capabilities.setCapability("autoAcceptAlerts", "true");
 //    capabilities.setCapability("appiumVersion","v1.22.3");
 //        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities);  //4723
