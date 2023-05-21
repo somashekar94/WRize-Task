@@ -4,10 +4,13 @@ package initialization ;
 
 
 
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.SessionId;
 
-
-
+import java.util.HashMap;
+import java.util.List;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -21,14 +24,13 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import org.openqa.selenium.remote.CapabilityType;
 
 
 public class Baseclass {
@@ -40,6 +42,8 @@ public class Baseclass {
     public static String appPackage;
     public static String appActivity;
     public static AndroidDriver driver;
+
+   
 
     
     protected static ExtentTest test;
@@ -59,17 +63,15 @@ public class Baseclass {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"soma");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Andriod");
-//        capabilities.setCapability(MobileCapabilityType.APP,"IMCL LCO APP");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
-        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "menloseweight.loseweightappformen.weightlossformen");
-        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,".activity.SplashActivity t651");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.vending");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.android.vending.AssetBrowserActivity");
         capabilities.setCapability("autoGrantPermissions", "true");
         capabilities.setCapability("autoAcceptAlerts", "true");
 //    capabilities.setCapability("appiumVersion","v1.22.3");
-//        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities);  //4723
+    driver = new AndroidDriver(new URL("http://127.0.0.1:9515/wd/hub"),capabilities);  //4723
+	
         
-//        AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities); 
-
     }
     
 @BeforeTest
@@ -83,6 +85,10 @@ public static void setUpReports() {
     htmlReporter.config().setTheme(Theme.STANDARD);
     extent.flush();
 }
+
+
+
+
 @AfterMethod
 public void getResult(ITestResult result) {
     if (result.getStatus() == ITestResult.FAILURE) {
@@ -95,14 +101,18 @@ public void getResult(ITestResult result) {
         test.skip(result.getThrowable());
        
     }
-    
-    
+  
+   
+
+   
    
 }
 @AfterMethod
 public void afterMethod() {
     extent.flush();
 }
+
+
 
   
 

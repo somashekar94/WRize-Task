@@ -5,17 +5,14 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import initialization.Baseclass;
-import pages.Login_page;
-
+import pages.playstore;
 
 @Listeners(generic.CustomListener.class)
 
-public class Logging extends Baseclass{
-	@Test
-	public void LOGGIN() throws InterruptedException {
-	Login_page lp=PageFactory.initElements(driver,Login_page.class);
-	lp.Loginpage();
-	
-
+public class installzomato extends Baseclass {
+@Test
+public void appintall() throws Exception {
+	playstore ap=PageFactory.initElements(driver, playstore.class);
+	ap.Installapp();
 }
 }

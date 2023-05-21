@@ -17,13 +17,12 @@
   
   test = extent.createTest(iTestResult.getName(), " - PASSED"); }
   
-  public void onTestFailure(ITestResult iTestResult) { test =
-  extent.createTest(iTestResult.getName(), " - FAILED");
+  public void onTestFailure(ITestResult iTestResult) { test = extent.createTest(iTestResult.getName(), " - FAILED");
   
   TakesScreenshot ts =(TakesScreenshot) Baseclass.driver; 
   File srcFile=ts.getScreenshotAs(OutputType.FILE);
   
-  try { String filePath =System.getProperty("user.dir")+"\\Screenshots\\" + iTestResult.getName() + ".jpg";
+  try { String filePath =System.getProperty("user.dir")+"\\Screenshots\\" + iTestResult.getName() + ".jpeg";
   FileUtils.copyFile(srcFile, new File(filePath));
   test.addScreenCaptureFromPath(filePath); 
   } 

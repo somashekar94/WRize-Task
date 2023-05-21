@@ -4,7 +4,11 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="initialization.Baseclass"/>
-      <class name="Testscript.Logging"/>
+  <class name="Testscript.installzomato"/>
+  <class name="Testscript.Loginintozomato"/>
+  <class name="Testscript.SearchHotel"/>
+  <class name="Testscript.AddCarttoitems"/>
+  <class name="Testscript.Confirmandplaceorder"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
