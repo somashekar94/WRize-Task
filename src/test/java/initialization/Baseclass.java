@@ -64,6 +64,7 @@ public class Baseclass {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"soma");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Andriod");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
+<<<<<<< HEAD
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.vending");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.android.vending.AssetBrowserActivity");
         capabilities.setCapability("autoGrantPermissions", "true");
@@ -71,6 +72,14 @@ public class Baseclass {
 //    capabilities.setCapability("appiumVersion","v1.22.3");
     driver = new AndroidDriver(new URL("http://127.0.0.1:9515/wd/hub"),capabilities);  //4723
 	
+=======
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "menloseweight.loseweightappformen.weightlossformen");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,".activity.SplashActivity t651");
+//        capabilities.setCapability("autoGrantPermissions", "true");
+//        capabilities.setCapability("autoAcceptAlerts", "true");
+//     capabilities.setCapability("appiumVersion","v1.22.3");
+        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:9515/wd/hub"),capabilities);  //4723
+>>>>>>> 3c4729e46b660c1e11031439aa6b97b8306d9ce2
         
     }
     
